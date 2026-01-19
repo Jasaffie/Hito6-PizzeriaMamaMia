@@ -7,7 +7,7 @@ const PizzasProvider = ({ children }) => {
   const getData = async (url) => {
     const response = await fetch(url);
     const pizzas = await response.json();
-    const nuevaPizza = pizzas.map((pizza) => ({ ...pizza, count: 0 }))
+    const nuevaPizza = pizzas.map((pizza) => ({ ...pizza, count: 0 }));
     setData(nuevaPizza);
   };
   useEffect(() => {
@@ -34,13 +34,16 @@ const PizzasProvider = ({ children }) => {
     });
     setData(restaPizza);
   };
-  const totalPizzas = data.reduce(
-    (total, pizza) => total + pizza.price * pizza.count,
-    0
-  ).toLocaleString("es-CL");
-  const globalState = {data, filtrarPizzas, suma, resta, totalPizzas};
+  const totalPizzas = data
+    .reduce((total, pizza) => total + pizza.price * pizza.count, 0)
+    .toLocaleString("es-CL");
+  const globalState = { data, filtrarPizzas, suma, resta, totalPizzas };
 
-  return <PizzasContext.Provider value={globalState}>{children}</PizzasContext.Provider>;
+  return (
+    <PizzasContext.Provider value={globalState}>
+      {children}
+    </PizzasContext.Provider>
+  );
 };
 
-export default PizzasProvider ;
+export default PizzasProvider;

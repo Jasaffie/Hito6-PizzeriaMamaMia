@@ -37,7 +37,7 @@ const Cart = () => {
                     </div>
                   </Col>
                 </div>
-                <hr />
+                <hr/>
               </div>
             ))}
             <h2>Total: ${totalPizzas.toLocaleString("es-CL")}</h2>

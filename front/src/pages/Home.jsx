@@ -4,13 +4,13 @@ import { useContext } from "react";
 import { PizzasContext } from "../context/PizzasContext.jsx";
 
 const Home = () => {
-   const { data } = useContext(PizzasContext)
+  const { data } = useContext(PizzasContext);
 
   return (
     <>
       <Header></Header>
       <div className="products container-fluid">
-        <CardPizza pizzas = {data}/>
+        <CardPizza pizzas={data} />
       </div>
     </>
   );
