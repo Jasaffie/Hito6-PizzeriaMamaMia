@@ -1,4 +1,4 @@
-- Hito 5: React Router I.
+- Hito 6: Context.
 
 # React + Vite
 
